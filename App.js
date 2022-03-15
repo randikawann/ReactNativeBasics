@@ -5,7 +5,7 @@ import Header from './components/Header'
 const App = () => {
   return(
     <View style = {styles.container}>
-      <Header title='Shopping list'/>
+      <Header/>
   
     </View>
   )

@@ -7,7 +7,11 @@ const Header = ({title}) => {
       <Text style={styles.text}>{title}</Text>
   
     </View>
-  )
+  );
+};
+
+Header.defaultProps = {
+    title: 'Defaults props'
 }
 
 
