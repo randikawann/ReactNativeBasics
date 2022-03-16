@@ -4,6 +4,7 @@ import Header from './components/Header';
 const App = () => {
 
   const [name, setName] = useState('Mash');
+  const [session, setSession] = useState({number:4, states:"fjfdvdf"})
 
   const changeStates = () => {
     if(name == 'Mash'){
@@ -11,6 +12,7 @@ const App = () => {
     }else{
       setName('Mash')
     }
+    setSession({number:session.number+1, states: "fjfddf "+session.number})
   }
 
 
@@ -19,6 +21,7 @@ const App = () => {
       <Header title='Shopping list'/>
 
       <Text style = {styles.bodytext}>This is text {name}</Text>
+      <Text style = {styles.bodytext}>Here the session number {session.number} and session name {session.states}</Text>
       <Button title='Click here to changed button' onPress={changeStates}></Button>
     </View>
   )
