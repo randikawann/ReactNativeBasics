@@ -18,6 +18,7 @@ const App = () => {
     <View style = {styles.container}>
       <FlatList 
         inverted
+        horizontal
         keyExtractor={(item, index) =>  index.toString()}
         data={items}
         renderItem = {({item}) => (
