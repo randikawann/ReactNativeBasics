@@ -4,11 +4,11 @@ import Header from './components/Header';
 const App = () => {
 
   const [items, setItems] = useState([
-    {key:'1', name: 'item 1'},
-    {key:'2', name: 'item 2'},
-    {key:'3', name: 'item 3'},
-    {key:'4', name: 'item 4'},
-    {key:'5', name: 'item 5'},
+    {name: 'item 1'},
+    {name: 'item 2'},
+    {name: 'item 3'},
+    {name: 'item 4'},
+    {name: 'item 5'},
   
   
   ])
@@ -17,6 +17,7 @@ const App = () => {
   return(
     <View style = {styles.container}>
       <FlatList 
+      keyExtractor={(item, index) =>  index.toString()}
       data={items}
       renderItem = {({item}) => (
         <View style={styles.item}>
