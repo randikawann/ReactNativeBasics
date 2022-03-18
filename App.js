@@ -17,13 +17,14 @@ const App = () => {
   return(
     <View style = {styles.container}>
       <FlatList 
-      keyExtractor={(item, index) =>  index.toString()}
-      data={items}
-      renderItem = {({item}) => (
-        <View style={styles.item}>
-              <Text style= {styles.text}>{item.name}</Text>
-        </View>
-      )}
+        numColumns = {2}
+        keyExtractor={(item, index) =>  index.toString()}
+        data={items}
+        renderItem = {({item}) => (
+          <View style={styles.item}>
+                <Text style= {styles.text}>{item.name}</Text>
+          </View>
+        )}
       />
     </View>
   )
