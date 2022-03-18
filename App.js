@@ -17,7 +17,7 @@ const App = () => {
   return(
     <View style = {styles.container}>
       <FlatList 
-        numColumns = {2}
+        horizontal
         keyExtractor={(item, index) =>  index.toString()}
         data={items}
         renderItem = {({item}) => (
