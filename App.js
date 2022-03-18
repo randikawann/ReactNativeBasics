@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {View, Text, StyleSheet, FlatList, RefreshControl } from 'react-native';
+import SectionList from 'react-native/Libraries/Lists/SectionList';
 import Header from './components/Header';
 const App = () => {
 
@@ -12,27 +13,40 @@ const App = () => {
   
   ])
 
-  const [refreshing, setRefreshing] = useState(false)
-
-  const onRefresh = () => {
-    setRefreshing(true)
-    setItems([... items, {name: 'Item 69'}])
-    setRefreshing(false)
-  }
+const DATA = [
+  {
+    title: 'title 1',
+    data: ['title 1-1', 'title 1-2', 'title 1-3']
+  },
+  {
+    title: 'title 2',
+    data: ['title 2-1', 'title 2-2', 'title 2-3']
+  },
+  {
+    title: 'title 3',
+    data: ['title 3-1']
+  },
+  {
+    title: 'title 4',
+    data: ['title 4-1', 'title 4-2', 'title 4-3']
+  },
+]
 
   return(
     <View style = {styles.container}>
-      <FlatList 
-        keyExtractor={(item, index) =>  index.toString()}
-        data={items}
+      <SectionList 
+        keyExtractor = {(item, index) => index.toString()}
+        sections = {DATA}
         renderItem = {({item}) => (
-          <View style={styles.item}>
-                <Text style= {styles.text}>{item.name}</Text>
+          <View style = {styles.item} >
+            <Text style = {styles.text} >{item}</Text>
           </View>
         )}
-        refreshControl={
-          <RefreshControl refreshing = {refreshing} onRefresh={onRefresh} colors= {'red'}/>
-        }
+        renderSectionHeader = {({section})=>(
+          <View style = {styles.sectionItem} >
+            <Text style = {styles.text} >{section.title}</Text>
+          </View>
+        )}
       />
     </View>
   )
@@ -53,7 +67,17 @@ const styles = StyleSheet.create({
   text: {
     color: 'black',
     fontSize: 35,
-  }
+  },
+  sectionItem: {
+    margin: 10,
+    backgroundColor: 'yellow',
+    justifyContent: 'flex-start',
+    alignItems: 'center'
+  },
+  sectionTitle: {
+    color: 'red',
+    fontSize: 60,
+  },
 
 })
 
