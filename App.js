@@ -37,7 +37,7 @@ const App = () => {
   return(
     <View style = {styles.container}>
       <ScrollView refreshControl={
-        <RefreshControl refreshing = {refreshing} onRefresh={onRefresh} />}>
+        <RefreshControl refreshing = {refreshing} onRefresh={onRefresh} colors= {'red'}/>}>
         {
           items.map((i) => {return(
             <View style={styles.item} key={i.key}>
