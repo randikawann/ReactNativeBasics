@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {View, Text, StyleSheet, FlatList } from 'react-native';
+import {View, Text, StyleSheet, FlatList, RefreshControl } from 'react-native';
 import Header from './components/Header';
 const App = () => {
 
@@ -10,15 +10,19 @@ const App = () => {
     {name: 'item 4'},
     {name: 'item 5'},
   
-  
   ])
 
+  const [refreshing, setRefreshing] = useState(false)
+
+  const onRefresh = () => {
+    setRefreshing(true)
+    setItems([... items, {name: 'Item 69'}])
+    setRefreshing(false)
+  }
 
   return(
     <View style = {styles.container}>
       <FlatList 
-        inverted
-        horizontal
         keyExtractor={(item, index) =>  index.toString()}
         data={items}
         renderItem = {({item}) => (
@@ -26,6 +30,9 @@ const App = () => {
                 <Text style= {styles.text}>{item.name}</Text>
           </View>
         )}
+        refreshControl={
+          <RefreshControl refreshing = {refreshing} onRefresh={onRefresh} colors= {'red'}/>
+        }
       />
     </View>
   )
