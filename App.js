@@ -8,12 +8,20 @@ const App = () => {
   const onPressHandler = () => {
     Alert.alert("Greatings", "Hi darling")
   }
+  const onLongPressHandler = () => {
+    Alert.alert("Greatings", "Hi darling longpress")
+  }
+
   return(
     <View style = {styles.container}>
       
       <Pressable   
         style={({pressed}) => [{backgroundColor: pressed ? '#234323': '#666666'}, styles.button]}
-        onPress={onPressHandler}>
+        onPress={onPressHandler}
+        onLongPress={onLongPressHandler}
+        // delayLongPress={1000}
+        
+        >
           <Text>Button</Text>
       </Pressable>
     </View>
