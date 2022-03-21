@@ -9,7 +9,9 @@ const App = () => {
   }
   return(
     <View style = {styles.container}>
-      <TouchableOpacity style={styles.button} onPress={onPressHandler}>
+      <TouchableOpacity style={styles.button} 
+        onPress={onPressHandler}
+        activeOpacity={0.6}>
         <Text>Button</Text>
       </TouchableOpacity>
     </View>
