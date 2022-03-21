@@ -18,9 +18,8 @@ const App = () => {
       <Pressable   
         style={({pressed}) => [{backgroundColor: pressed ? '#234323': '#666666'}, styles.button]}
         onPress={onPressHandler}
-        onLongPress={onLongPressHandler}
-        // delayLongPress={1000}
-        
+        hitSlop = {{top:20, bottom:20, left:20, right:20}} //outside of button clicked
+        disabled
         >
           <Text>Button</Text>
       </Pressable>
