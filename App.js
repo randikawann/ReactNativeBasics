@@ -6,10 +6,10 @@ import Header from './components/Header';
 const App = () => {
 
   const onPressHandler = () => {
-    Alert.alert("Greatings", "Hi darling")
+    Alert.alert("Greatings", "Hi darling..")
   }
   const onLongPressHandler = () => {
-    Alert.alert("Greatings", "Hi darling longpress")
+    Alert.alert("Greatings", "Hi darling longpress..")
   }
 
   return(
