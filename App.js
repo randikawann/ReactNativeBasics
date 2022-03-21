@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {View, Text, StyleSheet, TouchableWithoutFeedback, Alert } from 'react-native';
+import Pressable from 'react-native/Libraries/Components/Pressable/Pressable';
 import SectionList from 'react-native/Libraries/Lists/SectionList';
 import Header from './components/Header';
 const App = () => {
@@ -10,12 +11,11 @@ const App = () => {
   return(
     <View style = {styles.container}>
       
-      <TouchableWithoutFeedback   
+      <Pressable   
+        style={({pressed}) => [{backgroundColor: pressed ? '#234323': '#666666'}, styles.button]}
         onPress={onPressHandler}>
-          <View style={styles.button} >
-            <Text>Button</Text>
-          </View>
-      </TouchableWithoutFeedback>
+          <Text>Button</Text>
+      </Pressable>
     </View>
   )
 }
@@ -34,7 +34,6 @@ const styles = StyleSheet.create({
   button: {
     marginTop: 100,
     alignSelf: 'center',
-    backgroundColor: 'blue',
     color: 'white',
     width: 100,
     height: 50,
