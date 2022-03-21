@@ -16,10 +16,9 @@ const App = () => {
     <View style = {styles.container}>
       
       <Pressable   
-        style={({pressed}) => [{backgroundColor: pressed ? '#234323': '#666666'}, styles.button]}
+        style={({pressed}) => [{backgroundColor: pressed ? 'blue': 'red'}, styles.button]}
         onPress={onPressHandler}
-        hitSlop = {{top:20, bottom:20, left:20, right:20}} //outside of button clicked
-        disabled
+        android_ripple={{color: '#00f'}}
         >
           <Text>Button</Text>
       </Pressable>
