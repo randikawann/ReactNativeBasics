@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {View, Text, StyleSheet, TouchableOpacity, Alert } from 'react-native';
+import {View, Text, StyleSheet, TouchableHighlight, Alert } from 'react-native';
 import SectionList from 'react-native/Libraries/Lists/SectionList';
 import Header from './components/Header';
 const App = () => {
@@ -9,11 +9,11 @@ const App = () => {
   }
   return(
     <View style = {styles.container}>
-      <TouchableOpacity style={styles.button} 
+      <TouchableHighlight style={styles.button} 
         onPress={onPressHandler}
-        activeOpacity={0.6}>
+        underlayColor={'red'}>
         <Text>Button</Text>
-      </TouchableOpacity>
+      </TouchableHighlight>
     </View>
   )
 }
