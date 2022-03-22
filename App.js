@@ -16,8 +16,12 @@ const App = () => {
 
       <TextInput 
         style={styles.textInput}
+        multiline
         placeholder= {'eg. Randiksd'}
         onChangeText= {(value) => setName(value)}
+        keyboardType= 'numeric'
+        maxLength= {3}
+        editable = {false}
       /> 
       <Pressable   
         style={({pressed}) => [{backgroundColor: pressed ? 'blue': 'red'}, styles.button]}
