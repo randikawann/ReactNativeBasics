@@ -1,16 +1,24 @@
 import React, {useState} from 'react';
-import {View, Text, StyleSheet, TextInput, Alert, ToastAndroid, Modal } from 'react-native';
+import {View, Text, StyleSheet, TextInput, Alert, ToastAndroid, Modal, Image } from 'react-native';
 import Pressable from 'react-native/Libraries/Components/Pressable/Pressable';
 import SectionList from 'react-native/Libraries/Lists/SectionList';
 import Header from './components/Header';
 const App = () => {
 
   const onPressHandler = () => {
-    setShowarning(true)
+    // setShowarning(true)
+
+    Alert.alert("submitted"+submitted)
+    if(submitted){
+      setSubmitted(false)
+    }else{
+      setSubmitted(true)
+    }
   }
 
   const [name, setName] = useState('')
   const [showWarning, setShowarning] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
 
   return(
     <View style = {styles.container}>
@@ -52,6 +60,14 @@ const App = () => {
         >
           <Text>Button</Text>
       </Pressable>
+      {submitted ?
+              <Text style={styles.text}>submitted values</Text> : 
+              <Text style={styles.text}>not submitted values</Text> 
+      }
+      {submitted ?
+              <Image style= {styles.image} source= {require('./assets/done.png')}/> : 
+              <Image style= {styles.image} source= {require('./assets/error.png')}/>
+      }
     </View>
   )
 }
@@ -68,7 +84,7 @@ const styles = StyleSheet.create({
   },
 
   button: {
-    marginTop: 100,
+    marginTop: 10,
     alignSelf: 'center',
     color: 'white',
     width: 100,
@@ -78,9 +94,9 @@ const styles = StyleSheet.create({
   textInput: {
     borderColor: 'black',
     borderWidth: 4,
-    width: '100%',
     height: 50,
     margin: 20,
+    marginTop: 100,
   },
   warning_modal:{
     width: 300,
@@ -122,6 +138,12 @@ const styles = StyleSheet.create({
     borderBottomLeftRadius: 10,
      borderBottomRightRadius: 10,
   },
+
+  image: {
+    width:100,
+    height:100,
+    resizeMode: 'stretch'
+  }
 
 })
 
