@@ -9,10 +9,10 @@ const App = () => {
 
     if(name.length>3){
       Alert.alert("Match", "content is more than 3 characters",[
-        {text:'ok', onPress: ()=> console.warn('ok pressed')},
-        {text:'Cancel', onPress: ()=> console.warn('cancel pressed')},
+        {text:'ok', onPress: ()=> console.warn('ok pressed'), style: 'destructive'},
+        {text:'Cancel', onPress: ()=> console.warn('cancel pressed'), style: 'cancel'},
         {text:'Pending', onPress: ()=> console.warn('pending pressed')},
-      ])
+      ], {cancelable: true})
     }else{
 
     }
