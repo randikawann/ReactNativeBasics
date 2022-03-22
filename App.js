@@ -6,20 +6,6 @@ import Header from './components/Header';
 const App = () => {
 
   const onPressHandler = () => {
-
-    if(name.length>3){
-      Alert.alert("Match", "content is more than 3 characters",[
-        {text:'ok', onPress: ()=> console.warn('ok pressed'), style: 'destructive'},
-        {text:'Cancel', onPress: ()=> console.warn('cancel pressed'), style: 'cancel'},
-        {text:'Pending', onPress: ()=> console.warn('pending pressed')},
-      ], {cancelable: true, onDismiss: () => console.warn('Dismiss alert')})
-    }else{
-      ToastAndroid.show('cskcjskn', ToastAndroid.LONG)
-
-      ToastAndroid.showWithGravity('cskcjskn', ToastAndroid.LONG, ToastAndroid.TOP)
-
-      ToastAndroid.showWithGravityAndOffset('cskcjskn', ToastAndroid.LONG, ToastAndroid.TOP, 0, 100)
-    }
     
   }
 
