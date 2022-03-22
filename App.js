@@ -61,12 +61,17 @@ const App = () => {
           <Text>Button</Text>
       </Pressable>
       {submitted ?
-              <Text style={styles.text}>submitted values</Text> : 
-              <Text style={styles.text}>not submitted values</Text> 
-      }
-      {submitted ?
-              <Image style= {styles.image} source= {require('./assets/done.png')}/> : 
-              <Image style= {styles.image} source= {require('./assets/error.png')}/>
+              <View style={styles.image_container}>
+                <Text style={styles.text}>submitted values</Text>
+                <Image style= {styles.image} source= {require('./assets/done.png')}/>
+              </View>
+              
+              : 
+              <View style={styles.image_container}>
+                <Text style={styles.text}>not submitted values</Text> 
+                <Image style= {styles.image} source= {require('./assets/error.png')}/>
+              </View>
+            
       }
     </View>
   )
@@ -84,6 +89,7 @@ const styles = StyleSheet.create({
   },
 
   button: {
+    marginBottom: 30,
     marginTop: 10,
     alignSelf: 'center',
     color: 'white',
@@ -142,7 +148,13 @@ const styles = StyleSheet.create({
   image: {
     width:100,
     height:100,
-    resizeMode: 'stretch'
+    resizeMode: 'stretch',
+  },
+  image_container: {
+    alignContent: 'center',
+    justifyContent: 'center',
+    width: '100%',
+    backgroundColor: 'red'
   }
 
 })
