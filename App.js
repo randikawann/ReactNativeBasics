@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {View, Text, StyleSheet, TextInput, Alert } from 'react-native';
+import {View, Text, StyleSheet, TextInput, Alert, ToastAndroid } from 'react-native';
 import Pressable from 'react-native/Libraries/Components/Pressable/Pressable';
 import SectionList from 'react-native/Libraries/Lists/SectionList';
 import Header from './components/Header';
@@ -12,9 +12,13 @@ const App = () => {
         {text:'ok', onPress: ()=> console.warn('ok pressed'), style: 'destructive'},
         {text:'Cancel', onPress: ()=> console.warn('cancel pressed'), style: 'cancel'},
         {text:'Pending', onPress: ()=> console.warn('pending pressed')},
-      ], {cancelable: true})
+      ], {cancelable: true, onDismiss: () => console.warn('Dismiss alert')})
     }else{
+      ToastAndroid.show('cskcjskn', ToastAndroid.LONG)
 
+      ToastAndroid.showWithGravity('cskcjskn', ToastAndroid.LONG, ToastAndroid.TOP)
+
+      ToastAndroid.showWithGravityAndOffset('cskcjskn', ToastAndroid.LONG, ToastAndroid.TOP, 0, 100)
     }
     
   }
