@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {View, Text, StyleSheet, TextInput, Alert, ToastAndroid, Modal, Image } from 'react-native';
+import {View, Text, StyleSheet, TextInput, Alert, ToastAndroid, Modal, Image, ImageBackground } from 'react-native';
 import Pressable from 'react-native/Libraries/Components/Pressable/Pressable';
 import SectionList from 'react-native/Libraries/Lists/SectionList';
 import Header from './components/Header';
@@ -21,8 +21,8 @@ const App = () => {
   const [submitted, setSubmitted] = useState(false);
 
   return(
-    <View style = {styles.container}>
-
+    <ImageBackground style = {styles.container}
+    source={{uri: 'https://image.shutterstock.com/image-vector/seamless-loopable-abstract-chess-png-260nw-608966447.jpg'}}>
       <Modal
         visible = {showWarning}
         onRequestClose = {() => {setShowarning(false)}}
@@ -77,7 +77,7 @@ const App = () => {
             
       }
     
-    </View>
+    </ImageBackground>
   )
 }
 
