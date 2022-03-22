@@ -6,7 +6,17 @@ import Header from './components/Header';
 const App = () => {
 
   const onPressHandler = () => {
-    Alert.alert("User Name", "Hi darling.. "+name)
+
+    if(name.length>3){
+      Alert.alert("Match", "content is more than 3 characters",[
+        {text:'ok', onPress: ()=> console.warn('ok pressed')},
+        {text:'Cancel', onPress: ()=> console.warn('cancel pressed')},
+        {text:'Pending', onPress: ()=> console.warn('pending pressed')},
+      ])
+    }else{
+
+    }
+    
   }
 
   const [name, setName] = useState('')
@@ -16,12 +26,11 @@ const App = () => {
 
       <TextInput 
         style={styles.textInput}
-        multiline
         placeholder= {'eg. Randiksd'}
         onChangeText= {(value) => setName(value)}
-        keyboardType= 'numeric'
-        maxLength= {3}
-        editable = {false}
+      
+        // editable = {false}  // can't edit text input
+        // secureTextEntry   // show dots for secure text entry
       /> 
       <Pressable   
         style={({pressed}) => [{backgroundColor: pressed ? 'blue': 'red'}, styles.button]}
@@ -53,7 +62,8 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   textInput: {
-    
+    borderColor: 'black',
+    borderWidth: 4,
     width: '100%',
     height: 50,
     margin: 20,
