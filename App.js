@@ -1,24 +1,27 @@
 import React, {useState} from 'react';
-import {View, Text, StyleSheet, TouchableWithoutFeedback, Alert } from 'react-native';
+import {View, Text, StyleSheet, TextInput, Alert } from 'react-native';
 import Pressable from 'react-native/Libraries/Components/Pressable/Pressable';
 import SectionList from 'react-native/Libraries/Lists/SectionList';
 import Header from './components/Header';
 const App = () => {
 
   const onPressHandler = () => {
-    Alert.alert("Greatings", "Hi darling..")
+    Alert.alert("User Name", "Hi darling.. "+name)
   }
-  const onLongPressHandler = () => {
-    Alert.alert("Greatings", "Hi darling longpress..")
-  }
+
+  const [name, setName] = useState('')
 
   return(
     <View style = {styles.container}>
-      
+
+      <TextInput 
+        style={styles.textInput}
+        placeholder= {'eg. Randiksd'}
+        onChangeText= {(value) => setName(value)}
+      /> 
       <Pressable   
         style={({pressed}) => [{backgroundColor: pressed ? 'blue': 'red'}, styles.button]}
         onPress={onPressHandler}
-        android_ripple={{color: '#00f'}}
         >
           <Text>Button</Text>
       </Pressable>
@@ -44,6 +47,12 @@ const styles = StyleSheet.create({
     width: 100,
     height: 50,
     alignItems: 'center'
+  },
+  textInput: {
+    
+    width: '100%',
+    height: 50,
+    margin: 20,
   }
 
 })
