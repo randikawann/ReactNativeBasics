@@ -7,8 +7,6 @@ const App = () => {
 
   const onPressHandler = () => {
     // setShowarning(true)
-
-    Alert.alert("submitted"+submitted)
     if(submitted){
       setSubmitted(false)
     }else{
