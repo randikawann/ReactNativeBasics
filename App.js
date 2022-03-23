@@ -3,6 +3,7 @@ import {View, Text, StyleSheet, TextInput, Alert, ToastAndroid, Modal, Image, Im
 import Pressable from 'react-native/Libraries/Components/Pressable/Pressable';
 import SectionList from 'react-native/Libraries/Lists/SectionList';
 import Header from './components/Header';
+import MashButton from './CustomButton';
 const App = () => {
 
   const onPressHandler = () => {
@@ -55,12 +56,10 @@ const App = () => {
         // editable = {false}  // can't edit text input
         // secureTextEntry   // show dots for secure text entry
       /> 
-      <Pressable   
-        style={({pressed}) => [{backgroundColor: pressed ? 'blue': 'red'}, styles.button]}
-        onPress={onPressHandler}
-        >
-          <Text>Button</Text>
-      </Pressable>
+      <MashButton 
+        onPressFunctions = {onPressHandler}
+        title = {'Click Here'}
+      />
       {submitted ?
               <View style={styles.image_container}>
                 <Text style={styles.text}>submitted values</Text>
@@ -88,16 +87,6 @@ const styles = StyleSheet.create({
   text: {
     color: 'black',
     fontSize: 35,
-  },
-
-  button: {
-    marginBottom: 30,
-    marginTop: 10,
-    alignSelf: 'center',
-    color: 'white',
-    width: 100,
-    height: 50,
-    alignItems: 'center'
   },
   textInput: {
     borderColor: 'black',
