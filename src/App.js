@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {View, Text, StyleSheet, TextInput, Alert, ToastAndroid, Modal, Image, ImageBackground } from 'react-native';
 import Pressable from 'react-native/Libraries/Components/Pressable/Pressable';
 import SectionList from 'react-native/Libraries/Lists/SectionList';
-import Header from './components/Header';
+import Header from '../components/Header';
 import MashButton from './CustomButton';
 const App = () => {
 
