@@ -1,3 +1,4 @@
+import { NavigationContainer } from '@react-navigation/native';
 import React, {useState} from 'react';
 import {View, Text, StyleSheet, TextInput, Alert, ToastAndroid, Modal, Image, ImageBackground } from 'react-native';
 import Pressable from 'react-native/Libraries/Components/Pressable/Pressable';
@@ -7,7 +8,10 @@ import MashButton from './CustomButton';
 const App = () => {
 
   return(
-    
+    <NavigationContainer>
+
+      
+    </NavigationContainer>
   )
 }
 
