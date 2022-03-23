@@ -7,7 +7,7 @@ import Pressable from 'react-native/Libraries/Components/Pressable/Pressable';
 const MashButton = (props) => {
     return(
         <Pressable   
-        style={({pressed}) => [{backgroundColor: pressed ? 'blue': 'red'}, styles.button]}
+        style={({pressed}) => [{backgroundColor: pressed ? 'red': props.color}, styles.button, {... props.style}]}
         // onPress={onPressHandler}
             onPress={props.onPressFunctions}
         >
