@@ -6,22 +6,24 @@ import { createStackNavigator } from '@react-navigation/stack';
 import ScreenA from './ScreenA';
 import ScreenB from './ScreenB';
 
-const stack = createStackNavigator();
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+
+const Tab = createBottomTabNavigator();
 
 function App(){
 
   return(
     <NavigationContainer>
-      <stack.Navigator>
-        <stack.Screen 
+      <Tab.Navigator>
+        <Tab.Screen 
            name = "Screen_A"
            component={ScreenA}
         />
-        <stack.Screen 
+        <Tab.Screen 
            name = "Screen_B"
            component={ScreenB}
         />
-      </stack.Navigator>
+      </Tab.Navigator>
 
     </NavigationContainer>
   )
