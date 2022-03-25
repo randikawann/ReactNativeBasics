@@ -45,13 +45,12 @@ function App(){
 
   return(
     <NavigationContainer>
-      <stack.Navigator>
+      <stack.Navigator
+        screenOptions={{header: () => null}}
+      >
         <stack.Screen 
            name = "Screen_A"
            component={ScreenA}
-           options = {
-             {header: () => null}
-           }
         />
         <stack.Screen 
            name = "Screen_B"
