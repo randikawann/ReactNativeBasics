@@ -24,10 +24,19 @@ function ScreenA({navigation}){
   )
 }
 
-function ScreenB(){
+function ScreenB({navigation}){
+
+  const gobackfuntion = () => {
+    // navigation.navigate('Screen_A')
+    navigation.goBack();
+  }
+
   return(
     <View style = {styles.body}>
-      <Text>Screen B</Text>
+      <Text style={styles.text}>Screen B</Text>
+      <Pressable style={styles.button}> 
+        <Text onPress={gobackfuntion}>Go back</Text>
+      </Pressable>
     </View>
   )
 }
@@ -56,6 +65,17 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center'
+  },
+
+  button: {
+    backgroundColor: 'blue',
+  },
+
+  button_text: {
+    color: 'white',
+  } ,
+  text: {
+    fontSize: 30,
   }
 })
 
