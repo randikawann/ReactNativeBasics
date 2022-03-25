@@ -11,7 +11,8 @@ const stack = createStackNavigator();
 function ScreenA({navigation}){
 
   const onPressHandler = () => {
-    navigation.navigate('Screen_B')
+    // navigation.navigate('Screen_B')
+    navigation.replace('Screen_B')
   }
 
   return(
@@ -27,8 +28,8 @@ function ScreenA({navigation}){
 function ScreenB({navigation}){
 
   const gobackfuntion = () => {
-    // navigation.navigate('Screen_A')
-    navigation.goBack();
+    navigation.navigate('Screen_A')
+    // navigation.goBack();
   }
 
   return(
