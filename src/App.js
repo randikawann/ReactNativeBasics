@@ -3,7 +3,7 @@ import React, {useState} from 'react';
 import {View, Text , StyleSheet} from 'react-native';
 
 import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import { createStackNavigator, Header } from '@react-navigation/stack';
 import Pressable from 'react-native/Libraries/Components/Pressable/Pressable';
 
 const stack = createStackNavigator();
@@ -11,8 +11,7 @@ const stack = createStackNavigator();
 function ScreenA({navigation}){
 
   const onPressHandler = () => {
-    // navigation.navigate('Screen_B')
-    navigation.replace('Screen_B')
+    navigation.navigate('Screen_B')
   }
 
   return(
@@ -28,8 +27,8 @@ function ScreenA({navigation}){
 function ScreenB({navigation}){
 
   const gobackfuntion = () => {
-    navigation.navigate('Screen_A')
-    // navigation.goBack();
+    // navigation.navigate('Screen_A')
+    navigation.goBack();
   }
 
   return(
@@ -50,6 +49,9 @@ function App(){
         <stack.Screen 
            name = "Screen_A"
            component={ScreenA}
+           options = {
+             {header: () => null}
+           }
         />
         <stack.Screen 
            name = "Screen_B"
