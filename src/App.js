@@ -23,15 +23,18 @@ function App(){
             if(route.name == 'Screen_A'){
                 // <i class="far fa-acorn"></i>
               iconName = 'openid';
+
             }else if(route.name == 'Screen_B'){
               iconName = 'star';
             }
 
+            size = focused? 25 : 20
+            color = focused? 'blue': 'red'
             return (
               <FontAwesomeIcon 
                 name= {iconName}
-                size = {25}
-                color = 'blue'
+                size = {size}
+                color = {color}
               />
             )
           }
