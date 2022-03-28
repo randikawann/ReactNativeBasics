@@ -39,6 +39,14 @@ function App(){
             )
           }
         })}
+        tabBarOptions = {{
+          activeTintColor: 'blue',
+          inactiveTintColor: 'red',
+          activeBackgroundColor: 'red',
+          inactiveBackgroundColor: 'blue',
+          // showLabel: false,
+          labelStyle: {fontSize: 14}
+        }}
       >
         <Tab.Screen 
            name = "Screen_A"
