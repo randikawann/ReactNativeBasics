@@ -14,6 +14,8 @@ const Tab = createBottomTabNavigator();
 
 function App(){
 
+  const [batchno, setBatchNo] = useState(3)
+
   return(
     <NavigationContainer>
       <Tab.Navigator
@@ -26,6 +28,7 @@ function App(){
 
             }else if(route.name == 'Screen_B'){
               iconName = 'star';
+              setBatchNo(focused? 4: 2)
             }
 
             size = focused? 25 : 20
@@ -51,6 +54,7 @@ function App(){
         <Tab.Screen 
            name = "Screen_A"
            component={ScreenA}
+           options= {{tabBarBadge: batchno}}
         />
         <Tab.Screen 
            name = "Screen_B"
