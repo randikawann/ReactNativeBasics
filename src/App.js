@@ -7,10 +7,12 @@ import ScreenA from './ScreenA';
 import ScreenB from './ScreenB';
 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
+
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome'
 
-const Tab = createBottomTabNavigator();
+const Tab = createMaterialBottomTabNavigator();
 
 function App(){
 
@@ -50,6 +52,9 @@ function App(){
           // showLabel: false,
           labelStyle: {fontSize: 14}
         }}
+        activeColor= '#f0edf6'
+        inactiveColor='#3e2465'
+        barStyle= {{backgroundColor: '#694fad'}}
       >
         <Tab.Screen 
            name = "Screen_A"
