@@ -5,7 +5,9 @@ export default function ScreenB({navigation, route}){
 
   const {ItemName, ItemId} = route.params;
     const gobackfuntion = () => {
-      navigation.goBack();
+      // navigation.goBack();
+
+      navigation.setParams({ItemId: 14})
     }
   
     return(
@@ -15,7 +17,8 @@ export default function ScreenB({navigation, route}){
           <Text onPress={gobackfuntion}>Go back</Text>
         </Pressable>
 
-        <Text style={styles.text}>Screen Items {ItemName}</Text>
+        <Text style={styles.text}>Screen Items: {ItemName}</Text>
+        <Text style={styles.text}>Screen Items id: {ItemId}</Text>
       </View>
     )
   }
