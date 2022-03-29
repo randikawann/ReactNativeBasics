@@ -1,8 +1,9 @@
 import React, {useState} from 'react';
 import {View, Text , StyleSheet, Pressable} from 'react-native';
 
-export default function ScreenB({navigation}){
+export default function ScreenB({navigation, route}){
 
+  const {ItemName, ItemId} = route.params;
     const gobackfuntion = () => {
       navigation.goBack();
     }
@@ -13,6 +14,8 @@ export default function ScreenB({navigation}){
         <Pressable style={styles.button}> 
           <Text onPress={gobackfuntion}>Go back</Text>
         </Pressable>
+
+        <Text style={styles.text}>Screen Items {ItemName}</Text>
       </View>
     )
   }
