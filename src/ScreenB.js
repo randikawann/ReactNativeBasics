@@ -3,11 +3,9 @@ import {View, Text , StyleSheet, Pressable} from 'react-native';
 
 export default function ScreenB({navigation, route}){
 
-  const {ItemName, ItemId} = route.params;
+  // const {ItemName, ItemId} = route.params;
     const gobackfuntion = () => {
-      // navigation.goBack();
-
-      navigation.setParams({ItemId: 14})
+      navigation.goBack();
     }
   
     return(
@@ -17,8 +15,7 @@ export default function ScreenB({navigation, route}){
           <Text onPress={gobackfuntion}>Go back</Text>
         </Pressable>
 
-        <Text style={styles.text}>Screen Items: {ItemName}</Text>
-        <Text style={styles.text}>Screen Items id: {ItemId}</Text>
+        <Text style={styles.text}>Screen Items: {route.params?.ItemName}</Text>
       </View>
     )
   }

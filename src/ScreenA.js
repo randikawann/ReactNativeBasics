@@ -4,7 +4,7 @@ import {View, Text , StyleSheet, Pressable} from 'react-native';
 export default function ScreenA({navigation}){
 
     const onPressHandler = () => {
-      navigation.navigate('Screen_B', {ItemName: 'Here from Screen A', ItemId: 12})
+      navigation.navigate('Screen_B', {ItemName: 'Here from Screen A'})
     }
   
     return(
