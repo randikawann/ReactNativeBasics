@@ -150,6 +150,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				75FEDF9BB4BFFE0E41B6403A /* Pods */,
+				C12C7C27130D4A0C9F24C192 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -187,6 +188,14 @@
 			);
 			name = Fonts;
 			sourceTree = "<group>";
+		};
+		C12C7C27130D4A0C9F24C192 /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
