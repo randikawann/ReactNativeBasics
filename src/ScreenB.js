@@ -36,6 +36,6 @@ export default function ScreenB({navigation, route}){
     } ,
     text: {
       fontSize: 30,
-      fontFamily: 'SendFlowers-Regular',
+      fontFamily: 'Fontisto',
     }
   })
