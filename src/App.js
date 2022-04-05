@@ -26,9 +26,11 @@ function App(){
                 // <i class="far fa-acorn"></i>
               iconName = 'openid';
 
+              setBatchNo(focused? 3: 6)
+
             }else if(route.name == 'Screen_B'){
               iconName = 'star';
-              setBatchNo(focused? 4: 2)
+              setBatchNo(focused? 5: 4)
             }
 
             size = focused? 25 : 20
