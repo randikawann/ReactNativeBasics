@@ -41,7 +41,7 @@ export default function Home({navigation}){
       <View style = {styles.body}>
         <Text style = {[styles.text, GlobleStyle.CustomFont]}>Welcome to Async sample</Text>
 
-        <Text style = {GlobleStyle.CustomFont}>Here the details name is {name} and age is {age}</Text>
+        <Text style = {GlobleStyle.CustomFont}>Here the details {name} , age is {age}</Text>
 
         <CustomButton
           title = 'Remove'

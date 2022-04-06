@@ -3,6 +3,8 @@ import React, {useState} from 'react';
 import {View, StyleSheet, Image, Text, TextInput, Alert } from 'react-native'
 import CustomButton from '../utils/CustomButton'
 
+// source time- 03.33.14
+
 export default function Login({navigation}){
 
     const [name, setName] = useState('')
@@ -33,7 +35,7 @@ export default function Login({navigation}){
                 source = {require('../../assets/done.png')}
             />
             <Text style = {styles.headerText}>
-                Async Storage
+                SQLite DB
             </Text>
             <TextInput 
                 style = {styles.inputbox}
