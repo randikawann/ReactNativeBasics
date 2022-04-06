@@ -8,6 +8,7 @@ import CustomButton from '../utils/CustomButton'
 export default function Home({navigation}){
 
   const [name, setName] = useState('');
+  const [age, setAge] = useState('')
 
   useEffect(() => { // this is for onstart method starting the functions
     getData();
@@ -16,10 +17,12 @@ export default function Home({navigation}){
 
   const getData = () => {
     try{
-      AsyncStorage.getItem('UserName')
+      AsyncStorage.getItem('UserData')
         .then(value => {
           if(value !=null){
-            setName(value)
+            let user = JSON.parse(value)
+            setName(user.Name)
+            setAge(user.Age)
           }
         })
     }catch(error){
@@ -30,8 +33,7 @@ export default function Home({navigation}){
 
 
     const removeData = () => {
-      // AsyncStorage.removeItem('UserName')
-      AsyncStorage.clear()
+      AsyncStorage.removeItem('UserData')
       navigation.navigate('Login')
     }
   
@@ -39,7 +41,7 @@ export default function Home({navigation}){
       <View style = {styles.body}>
         <Text style = {[styles.text, GlobleStyle.CustomFont]}>Welcome to Async sample</Text>
 
-        <Text style = {GlobleStyle.CustomFont}>Here the details {name}</Text>
+        <Text style = {GlobleStyle.CustomFont}>Here the details name is {name} and age is {age}</Text>
 
         <CustomButton
           title = 'Remove'

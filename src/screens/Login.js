@@ -6,13 +6,18 @@ import CustomButton from '../utils/CustomButton'
 export default function Login({navigation}){
 
     const [name, setName] = useState('')
+    const [age, setAge] = useState('')
 
     const setData = async () => {
-        if(name.length==0){
+        if(name.length==0 || age.length == 0){
              Alert.alert('Warning!', "Please type your name")
         }else{
             try{
-                await AsyncStorage.setItem('UserName', name)
+                var user = {
+                    Name: name,
+                    Age: age
+                }
+                await AsyncStorage.setItem('UserData', JSON.stringify(user))
                 navigation.navigate('Home')
             }catch(error){
                 console.log(error)
@@ -34,6 +39,13 @@ export default function Login({navigation}){
                 style = {styles.inputbox}
                 placeholder = 'Enter your name'
                 onChangeText={(value) => setName(value)}
+            
+            />
+
+            <TextInput 
+                style = {styles.inputbox}
+                placeholder = 'Enter your age'
+                onChangeText={(value) => setAge(value)}
             
             />
 
@@ -73,8 +85,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#ffffff',
         textAlign: 'center',
         fontSize: 20,
-        marginTop: 130,
-        marginBottom: 10,
+        margin: 10
     },
     customButton: {
         alignItems: 'center',
