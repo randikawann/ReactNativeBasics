@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import {View, Text , StyleSheet, Pressable} from 'react-native';
 
+import GlobleStyle from '../utils/GlobleStyle';
+
 export default function ScreenA({navigation}){
 
     const onPressHandler = () => {
@@ -9,7 +11,7 @@ export default function ScreenA({navigation}){
   
     return(
       <View style = {styles.body}>
-        <Text>Screen A</Text>
+        <Text style = {[styles.text, GlobleStyle.CustomFont]}>Screen A</Text>
         <Pressable > 
           <Text onPress={onPressHandler}>Go screen B</Text>
         </Pressable>

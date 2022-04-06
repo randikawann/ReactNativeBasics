@@ -3,8 +3,8 @@ import React, {useState} from 'react';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import ScreenA from './ScreenA';
-import ScreenB from './ScreenB';
+import ScreenA from './screens/ScreenA';
+import ScreenB from './screens/ScreenB';
 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
@@ -25,8 +25,6 @@ function App(){
             if(route.name == 'Screen_A'){
                 // <i class="far fa-acorn"></i>
               iconName = 'openid';
-
-              setBatchNo(focused? 3: 6)
 
             }else if(route.name == 'Screen_B'){
               iconName = 'star';
