@@ -1,8 +1,12 @@
 import {StyleSheet} from 'react-native';
 
 
-StyleSheet.create({
+export default StyleSheet.create({
     CustomFont: {
         fontFamily: 'Fontisto'
+    },
+
+    ButtonText: {
+        fontSize: 30
     }
-})
+});

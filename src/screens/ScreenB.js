@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {View, Text , StyleSheet, Pressable} from 'react-native';
+import GlobleStyle from '../utils/GlobleStyle';
 
 export default function ScreenB({navigation, route}){
 
@@ -12,7 +13,7 @@ export default function ScreenB({navigation, route}){
       <View style = {styles.body}>
         <Text style={styles.text}>Screen B</Text>
         <Pressable style={styles.button}> 
-          <Text onPress={gobackfuntion}>Go back</Text>
+          <Text style = {[styles.button_text, GlobleStyle.ButtonText]} onPress={gobackfuntion}>Go back</Text>
         </Pressable>
 
         <Text style={styles.text}>Screen Items: {route.params?.ItemName}</Text>
