@@ -3,10 +3,10 @@ import {View, Text , StyleSheet, Pressable} from 'react-native';
 
 import GlobleStyle from '../utils/GlobleStyle';
 
-export default function ScreenA({navigation}){
+export default function Home({navigation}){
 
     const onPressHandler = () => {
-      navigation.navigate('Screen_B', {ItemName: 'Here from Screen A'})
+      // navigation.navigate('Screen_B', {ItemName: 'Here from Screen A'})
     }
   
     return(
