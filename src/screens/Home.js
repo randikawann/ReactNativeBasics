@@ -1,20 +1,50 @@
-import React, {useState} from 'react';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import React, {useState, useEffect} from 'react';
 import {View, Text , StyleSheet, Pressable} from 'react-native';
 
 import GlobleStyle from '../utils/GlobleStyle';
+import CustomButton from '../utils/CustomButton'
 
 export default function Home({navigation}){
 
-    const onPressHandler = () => {
-      // navigation.navigate('Screen_B', {ItemName: 'Here from Screen A'})
+  const [name, setName] = useState('');
+
+  useEffect(() => { // this is for onstart method starting the functions
+    getData();
+  }, [])
+  
+
+  const getData = () => {
+    try{
+      AsyncStorage.getItem('UserName')
+        .then(value => {
+          if(value !=null){
+            setName(value)
+          }
+        })
+    }catch(error){
+      console.log(error)
+    }
+  }
+
+
+
+    const removeData = () => {
+      AsyncStorage.removeItem('UserName')
+      navigation.navigate('Login')
     }
   
     return(
       <View style = {styles.body}>
-        <Text style = {[styles.text, GlobleStyle.CustomFont]}>Screen A</Text>
-        <Pressable > 
-          <Text onPress={onPressHandler}>Go screen B</Text>
-        </Pressable>
+        <Text style = {[styles.text, GlobleStyle.CustomFont]}>Welcome to Async sample</Text>
+
+        <Text style = {GlobleStyle.CustomFont}>Here the details {name}</Text>
+
+        <CustomButton
+          title = 'Remove'
+          color = '#ff7f00'
+          onPressFunctions = {removeData}
+        />
       </View>
     )
   }
@@ -25,14 +55,7 @@ export default function Home({navigation}){
       justifyContent: 'center',
       alignItems: 'center'
     },
-  
-    button: {
-      backgroundColor: 'blue',
-    },
-  
-    button_text: {
-      color: 'white',
-    } ,
+
     text: {
       fontSize: 30,
     }
