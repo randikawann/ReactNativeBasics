@@ -166,6 +166,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		C12C7C27130D4A0C9F24C192 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Resources;
+			path = "";
+			sourceTree = "<group>";
+		};
 		CD2953FB27EDCBB50011A8EB /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -188,14 +196,6 @@
 			);
 			name = Fonts;
 			sourceTree = "<group>";
-		};
-		C12C7C27130D4A0C9F24C192 /* Resources */ = {
-			isa = "PBXGroup";
-			children = (
-			);
-			name = Resources;
-			sourceTree = "<group>";
-			path = "";
 		};
 /* End PBXGroup section */
 
