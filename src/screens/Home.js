@@ -30,7 +30,8 @@ export default function Home({navigation}){
 
 
     const removeData = () => {
-      AsyncStorage.removeItem('UserName')
+      // AsyncStorage.removeItem('UserName')
+      AsyncStorage.clear()
       navigation.navigate('Login')
     }
   
